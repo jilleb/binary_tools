@@ -19,7 +19,7 @@ for file_name in os.listdir(folder_path):
 
         with open(file_path, 'rb') as f:
             start_pos = config_startposition
-            end_pos = start_pos + dump_length
+            end_pos = start_pos + (dump_length-1)
             length = end_pos - start_pos + 1
             f.seek(start_pos)
             bytes_list = [int.from_bytes(f.read(1), byteorder='big') for _ in range(length)]
