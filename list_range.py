@@ -9,10 +9,12 @@ import os
 # configuration things, set these to your preference
 config_startposition = 3364 # where to start 
 dump_length = 16            # how much bytes would you like to list
-folder_path = './'
+folder_path = './'          # where to look for the files
+file_extension = ".fpa"     # what files do you want to compare
+
 
 for file_name in os.listdir(folder_path):
-    if file_name.endswith('.fpa'): #modify .bin to an other extension if needed
+    if file_name.endswith(file_extension):
         file_path = os.path.join(folder_path, file_name)
 
         with open(file_path, 'rb') as f:
